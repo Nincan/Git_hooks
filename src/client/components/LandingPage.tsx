@@ -1,4 +1,3 @@
-import React from 'react'
 import { isMobile } from 'react-device-detect'
 
 import lightScreen from '@resources/assets/screenshot-light.png'
@@ -10,6 +9,15 @@ import githubLogo from '@resources/assets/github-logo.png'
 const clientId = process.env.CLIENT_ID
 const isDemo = process.env.DEMO
 
+const React = require('react')
+const ReactDOM = require('react-dom')
+
+if (process.env.NODE_ENV == 'production') {
+  console.log('HEY')
+  const axe = require('react-axe')
+  axe(React, ReactDOM, 1000)
+}
+
 const loginButton = (text: string) => (
   <a
     className="button github-button"
@@ -19,6 +27,16 @@ const loginButton = (text: string) => (
     {text}
   </a>
 )
+// axe
+//   .run()
+//   .then(results => {
+//     if (results.violations.length) {
+//       throw new Error('Accessibility issues found');
+//     }
+//   })
+//   .catch(err => {
+//     console.error('Something bad happened:', err.message);
+//   });
 
 export const LandingPage: React.FC = () => {
   return (
@@ -26,7 +44,7 @@ export const LandingPage: React.FC = () => {
       <section className="content">
         <div className="container-small">
           <div className="lead">
-            <img src={logo} height="200" width="200" alt="TakeNote" />
+            <img src={logo} height="200" width="200" />
             <h1>
               The Note Taking App
               <br /> for Developers
@@ -37,7 +55,7 @@ export const LandingPage: React.FC = () => {
                 TakeNote is not currently supported for tablet and mobile devices.
               </p>
             ) : isDemo ? (
-              <div className="new-signup">
+              <div role="section" className="new-signup">
                 <div>
                   <p>
                     TakeNote is only available as a demo. Your notes will be saved to local storage
@@ -56,7 +74,9 @@ export const LandingPage: React.FC = () => {
                     account for authentication, and stores the data in a private{' '}
                     <code>takenotes-data</code> repo.
                   </p>
-                  <div className="cta">{loginButton('Sign Up with GitHub')}</div>
+                  <div className="cta" aria-label="Sign in with GitHub">
+                    {loginButton('Sign in with Github')}
+                  </div>
                 </div>
               </div>
             )}

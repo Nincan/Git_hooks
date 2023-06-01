@@ -90,6 +90,7 @@
     "uuid": "^8.3.1"
   },
   "devDependencies": {
+    "@axe-core/react": "^4.7.1",
     "@cypress/webpack-preprocessor": "^5.4.8",
     "@testing-library/cypress": "^7.0.1",
     "@testing-library/jest-dom": "^5.11.4",
@@ -137,7 +138,7 @@
     "eslint-plugin-react": "^7.21.4",
     "faker": "^5.1.0",
     "html-webpack-plugin": "^5.0.0-alpha.7",
-    "husky": "^4.3.0",
+    "husky": "^4.3.8",
     "image-webpack-loader": "^7.0.1",
     "jest": "^26.5.3",
     "jest-extended": "^0.11.5",
@@ -146,6 +147,7 @@
     "mini-css-extract-plugin": "^1.0.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.5",
+    "react-axe": "^3.5.4",
     "sass-loader": "^10.0.3",
     "style-loader": "^2.0.0",
     "ts-jest": "^26.4.1",
