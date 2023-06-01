@@ -66,9 +66,7 @@ export const LandingPage: React.FC = () => {
                     account for authentication, and stores the data in a private{' '}
                     <code>takenotes-data</code> repo.
                   </p>
-                  <div className="cta" aria-label="Sign in with GitHub">
-                    {loginButton('Sign in with Github')}
-                  </div>
+                  <div className="cta">{loginButton('Sign in with Github')}</div>
                 </div>
               </div>
             )}
