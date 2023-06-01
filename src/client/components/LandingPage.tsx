@@ -8,15 +8,7 @@ import githubLogo from '@resources/assets/github-logo.png'
 
 const clientId = process.env.CLIENT_ID
 const isDemo = process.env.DEMO
-
 const React = require('react')
-const ReactDOM = require('react-dom')
-
-if (process.env.NODE_ENV == 'production') {
-  console.log('HEY')
-  const axe = require('react-axe')
-  axe(React, ReactDOM, 1000)
-}
 
 const loginButton = (text: string) => (
   <a
